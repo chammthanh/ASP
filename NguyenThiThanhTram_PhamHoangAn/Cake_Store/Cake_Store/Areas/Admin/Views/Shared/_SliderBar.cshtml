@@ -1,0 +1,38 @@
+﻿<div class="nk-sidebar">
+    <div class="nk-nav-scroll">
+        <ul class="metismenu" id="menu">
+            <li class="nav-label">Dashboard</li>
+            <li>
+                <a class="has-arrow" asp-controller="Accounts" asp-action="Index">
+                    <i class="icon-speedometer menu-icon"></i><span class="nav-text">Tài Khoản</span>
+                </a>
+            </li>
+            <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="icon-envelope menu-icon"></i> <span class="nav-text">Quản Lý Sản Phẩm</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a asp-controller="Product_Type" asp-action="Index">Loại Sản Phẩm</a></li>
+                    <li><a asp-controller="Product_Size" asp-action="Index">Kích Thước</a></li>
+                    <li><a asp-controller="Images" asp-action="Index">Hình Ảnh</a></li>
+                    <li><a asp-controller="Products" asp-action="Index">Sản Phẩm</a></li>
+                    <li><a asp-controller="Product_Detail" asp-action="Index">Chi Tiết Sản Phẩm</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="icon-envelope menu-icon"></i> <span class="nav-text">Quản Lý Hóa Đơn</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a asp-controller="Invoices" asp-action="Index">Hóa Đơn</a></li>
+                    <li><a asp-controller="Invoice_Detail" asp-action="Index">Chi Tiết Hóa Đơn</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="has-arrow" asp-controller="List_Address" asp-action="Index">
+                    <i class="icon-speedometer menu-icon"></i><span class="nav-text">Danh Sách Địa Chỉ</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

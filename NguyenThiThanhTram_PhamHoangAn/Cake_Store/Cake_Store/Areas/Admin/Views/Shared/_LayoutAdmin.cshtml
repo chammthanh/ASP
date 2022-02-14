@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quixlab</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="~/admin/images/favicon.png">
+    <!-- Pignose Calender -->
+    <link href="~/admin/plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="~/admin/plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="~/admin/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <!-- Custom Stylesheet -->
+    <link href="~/admin/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="main-wrapper">
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <b class="logo-abbr"><img src="~/assets/Admin/images/logo.png" alt=""> </b>
+                    <span class="logo-compact"><img src="~/assets/Admin/images/logo-compact.png" alt=""></span>
+                    <span class="brand-title">
+                        <img src="~/assets/Admin/images/logo-text.png" alt="">
+                    </span>
+                </a>
+            </div>
+        </div>
+        <partial name="_Header" />
+
+        <partial name="_SliderBar" />
+        <div class="content-body">
+            <div class="container-fluid mt-3">
+                @RenderBody()
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
+            </div>
+        </div>
+
+        <script src="~/admin/plugins/common/common.min.js"></script>
+        <script src="~/admin/js/custom.min.js"></script>
+        <script src="~/admin/js/settings.js"></script>
+        <script src="~/admin/js/gleek.js"></script>
+        <script src="~/admin/js/styleSwitcher.js"></script>
+
+        <!-- Chartjs -->
+        <script src="~/admin/plugins/chart.js/Chart.bundle.min.js"></script>
+        <!-- Circle progress -->
+        <script src="~/admin/plugins/circle-progress/circle-progress.min.js"></script>
+        <!-- Datamap -->
+        <script src="~/admin/plugins/d3v3/index.js"></script>
+        <script src="~/admin/plugins/topojson/topojson.min.js"></script>
+        <script src="~/admin/plugins/datamaps/datamaps.world.min.js"></script>
+        <!-- Morrisjs -->
+        <script src="~/admin/plugins/raphael/raphael.min.js"></script>
+        <script src="~/admin/plugins/morris/morris.min.js"></script>
+        <!-- Pignose Calender -->
+        <script src="~/admin/plugins/moment/moment.min.js"></script>
+        <script src="~/admin/plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+        <!-- ChartistJS -->
+        <script src="~/admin/plugins/chartist/js/chartist.min.js"></script>
+        <script src="~/admin/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+
+
+
+        <script src="~/admin/js/dashboard/dashboard-1.js"></script>
+
+</body>
+
+</html>

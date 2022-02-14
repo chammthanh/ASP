@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Cake_Store.Models.Product_Detail>
+
+@{
+    Layout = "_LayoutAdmin";
+
+}
+
+<!DOCTYPE html>
+
+<form asp-controller="Product_Detail" asp-action="Index" method="get">
+    <label>Tìm Kiếm: </label><input type="text" name="input" /> <button type="submit" class="btn btn-info btn-sm">Tìm Kiếm</button>
+    <br />
+</form>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_Create)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Make_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_Expired)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Images)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Size.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Create)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product_Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Make_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Expired)
+            </td>
+            <td>
+                <img style="width:100px;height:100px" src="~/img/shop/@Html.DisplayFor(modelItem => item.Images.Images)" />
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

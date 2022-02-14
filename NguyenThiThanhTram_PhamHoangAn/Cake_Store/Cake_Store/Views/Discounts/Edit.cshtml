@@ -1,0 +1,92 @@
+﻿@model Cake_Store.Models.Discount
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="header__menu mobile-menu">
+                    <ul>
+                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-controller="Home" asp-action="Shop">Shop</a></li>
+                        <li>
+                            <a href="#">Pages</a>
+                            <ul class="dropdown">
+                                <li><a asp-controller="Home" asp-action="Single">Shop Details</a></li>
+                                <li><a asp-controller="Home" asp-action="Cart">Shoping Cart</a></li>
+                                <li><a asp-controller="Home" asp-action="Account">Account</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="breadcrumb__text">
+                    <h2>Edit</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <h4>Discount</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="DiscountName" class="control-label"></label>
+                    <input asp-for="DiscountName" class="form-control" />
+                    <span asp-validation-for="DiscountName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Discounts" class="control-label"></label>
+                    <input asp-for="Discounts" class="form-control" />
+                    <span asp-validation-for="Discounts" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Effective_Date" class="control-label"></label>
+                    <input asp-for="Effective_Date" class="form-control" />
+                    <span asp-validation-for="Effective_Date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Expiration_Date" class="control-label"></label>
+                    <input asp-for="Expiration_Date" class="form-control" />
+                    <span asp-validation-for="Expiration_Date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Status" class="control-label"></label>
+                    <input asp-for="Status" class="form-control" />
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

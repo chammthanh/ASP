@@ -1,0 +1,115 @@
+﻿@model IEnumerable<Cake_Store.Models.Account>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="header__menu mobile-menu">
+                    <ul>
+                        <li><a asp-controller="Accounts" asp-action="Index">Account</a></li>
+                        <li>
+                            <a href="#">Product</a>
+                            <ul class="dropdown">
+                                <li><a asp-controller="Products" asp-action="Index">Product</a></li>
+                                <li><a asp-controller="Product_Detail" asp-action="Index">Product_Details</a></li>
+                                <li><a asp-controller="Product_Size" asp-action="Index">Product_Size</a></li>
+                                <li><a asp-controller="Product_Type" asp-action="Index">Product_Type</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a asp-controller="Invoices" asp-action="Index">Invoice</a></li>
+                        <li><a asp-controller="Invoice_Detail" asp-action="Index">Invoice_Details</a></li>
+                        <li><a asp-controller="List_Address" asp-action="Index">List_Address</a></li>
+                        <li><a asp-controller="Images" asp-action="Index">Image</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="breadcrumb__text">
+                    <h2>Index</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <form asp-controller="Accounts" asp-action="Index" method="get">
+        <label>Tìm Kiếm: </label><input type="text" name="input" /> <button type="submit" class="btn btn-info btn-sm">Tìm Kiếm</button>
+        <br />
+    </form>
+    
+    <a asp-action="Create">Create New</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Username)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Birthday)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Birthday)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,106 @@
+﻿@model Cake_Store.Models.Product_Detail
+
+@{
+    ViewData["Title"] = "Details";
+}
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="header__menu mobile-menu">
+                    <ul>
+                        <li><a asp-controller="Accounts" asp-action="Index">Account</a></li>
+                        <li>
+                            <a href="#">Product</a>
+                            <ul class="dropdown">
+                                <li><a asp-controller="Products" asp-action="Index">Product</a></li>
+                                <li><a asp-controller="Product_Detail" asp-action="Index">Product_Details</a></li>
+                                <li><a asp-controller="Product_Size" asp-action="Index">Product_Size</a></li>
+                                <li><a asp-controller="Product_Type" asp-action="Index">Product_Type</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a asp-controller="Invoices" asp-action="Index">Invoice</a></li>
+                        <li><a asp-controller="Invoice_Detail" asp-action="Index">Invoice_Details</a></li>
+                        <li><a asp-controller="List_Address" asp-action="Index">List_Address</a></li>
+                        <li><a asp-controller="Images" asp-action="Index">Image</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="breadcrumb__text">
+                    <h2>Details</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div>
+        <h4>Product_Detail</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Size)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Size.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Product)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Product.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Date_Create)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Date_Create)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Quantity)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Product_Price)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Product_Price)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Make_Date)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Make_Date)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Date_Expired)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Date_Expired)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Images)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Images.Id)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
